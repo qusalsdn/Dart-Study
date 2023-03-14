@@ -1,9 +1,10 @@
 void main() {
-// Dynamic 타입은 여러가지 타입을 가질 수 있는 변수에 쓰는 키워드이다. (해당 변수의 타입을 알 수 없을 때 주로 사용)
-// 변수를 선언할 때 dynamic을 쓰거나 값을 지정하지 않으면 dynamic 타입을 가진다.
-// dynamic 타입은 대표적으로 타입을 알기가 힘들 때 사용한다. 예를 들어 json을 작업할 때 같은 경우다.
-// 하지만 dynamic 타입은 다양한 타입을 가질 수 있기 때문에 `정말 필요할 때만` 사용해야 한다. (위험 방지)
-  dynamic name;
-  if (name is String) {}
-  if (name is int) {}
+  // String뒤에 ?를 붙임으로써 String이 될 수도 있고 null이 될 수도 있다고 선언할 수 있다.
+  String? name = 'minu';
+  name = null;
+  name?.isNotEmpty; // ?를 붙임으로써 name이 존재하다고 명시해줌 즉, name이 null이 아닐 때만 isNotEmpty를 준다고 볼 수 있음
+  // 위와 아래의 코드는 동일한 코드이다.
+  if (name != null) {
+    name.isNotEmpty;
+  }
 }
