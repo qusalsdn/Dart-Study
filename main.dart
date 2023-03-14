@@ -1,7 +1,11 @@
 void main() {
-  var name = 'minu';
-  var age = 24;
-  // 변수 사용하는 방법은 $달러 기호를 붙이고 사용할 변수를 적어주면 된다. 만약 무언가를 계산하고 싶다면 ${ } 형태로 적어주면 된다.
-  var greeting = "Hello everyone, my name is $name and I'm ${age + 2}";
-  print(greeting);
+  var oldFriends = ['minu', 'nico'];
+  var newFriends = [
+    'lewis',
+    'ralph',
+    'darren',
+    // Collection For를 이용하여 아래와 같이 새로운 요소를 추가할 수 있다.
+    for (var friend in oldFriends) '😍 $friend'
+  ];
+  print(newFriends);
 }
