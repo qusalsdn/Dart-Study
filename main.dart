@@ -1,10 +1,18 @@
+void hiHello(String name) {
+  print('hi $name');
+}
+
+String sayHello(String name) {
+  return 'Hello $name nice to meet you';
+}
+
+// 함수가 한 줄 짜리 함수일 때 아래처럼 fat arrow syntax를 사용하면 코드를 간소화할 수 있다. 또한 return을 적지 않아도 자동으로 return이 된다.
+String arrowHello(String name) => 'arrowHello $name';
+num plus(num a, num b) => a + b;
+
 void main() {
-  // set과 list의 다른점은 set에 속한 모든 아이템들은 유니크하다.
-  var numbers = {1, 2, 3, 4, 5};
-  Set<int> number = {1, 2, 3, 4, 5};
-  numbers.add(1);
-  numbers.add(1);
-  numbers.add(1);
-  // numbers에 1을 3번이나 추가했지만 결과는 추가되지 않는다.
-  print(numbers);
+  hiHello('minu');
+  print(sayHello('minuuu'));
+  print(arrowHello('minuuuuuuuu'));
+  print(plus(1, 2));
 }
