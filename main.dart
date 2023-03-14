@@ -1,11 +1,19 @@
 void main() {
-  var oldFriends = ['minu', 'nico'];
-  var newFriends = [
-    'lewis',
-    'ralph',
-    'darren',
-    // Collection For를 이용하여 아래와 같이 새로운 요소를 추가할 수 있다.
-    for (var friend in oldFriends) '😍 $friend'
-  ];
-  print(newFriends);
+  var player = {
+    'name': 'minu',
+    'xp': 19.99,
+    'skill': false,
+  };
+
+  Map<int, bool> newPlayer = {
+    1: true,
+    2: false,
+    3: true,
+  };
+
+  Map<List<int>, bool> newPlay = {
+    [1, 2, 3, 4, 5]: true,
+  };
+
+  print(newPlay);
 }
