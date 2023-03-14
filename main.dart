@@ -1,10 +1,4 @@
 void main() {
-  // String뒤에 ?를 붙임으로써 String이 될 수도 있고 null이 될 수도 있다고 선언할 수 있다.
-  String? name = 'minu';
-  name = null;
-  name?.isNotEmpty; // ?를 붙임으로써 name이 존재하다고 명시해줌 즉, name이 null이 아닐 때만 isNotEmpty를 준다고 볼 수 있음
-  // 위와 아래의 코드는 동일한 코드이다.
-  if (name != null) {
-    name.isNotEmpty;
-  }
+  // var대신 final로 변수를 만들게 되면 이 변수는 수정할 수 없게 된다. (딱 한 번만 설정될 수 있음) 자바스크립트의 const랑 비슷하다.
+  final name = 'minu';
 }
