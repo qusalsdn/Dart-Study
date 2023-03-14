@@ -1,14 +1,17 @@
-String capitalizeName(String? name) =>
-    // ?? 연산자를 이용하면 왼쪽 값이 null인지 체크해서 null이 아니면 왼쪽 값을 리턴하고 null이면 오른쪽 값을 리턴한다.
-    name?.toUpperCase() ?? '알 수 없음...';
+// TypeDef은 자료형에 사용자가 원하는 alias를 붙일 수 있게 해준다.(자료형 이름의 별명을 만들 때 사용)
+typedef UserInfo = Map<String, String>;
+typedef ListOfInts = List<int>;
+
+String sayHi(UserInfo userInfo) {
+  return '안녕 ${userInfo['name']}';
+}
+
+ListOfInts reversListOfNumbers(ListOfInts list) {
+  var reversed = list.reversed;
+  return reversed.toList();
+}
 
 void main() {
-  print(capitalizeName('minu'));
-  print(capitalizeName(null));
-  String? name;
-  // ??= 연산자를 이용하면 변수 안에 값이 null일 때를 체크해서 값을 할당해줄 수 있다.
-  name ??= 'minu';
-  name = null;
-  name ??= 'woo';
-  print(name);
+  print(reversListOfNumbers([1, 2, 3]));
+  print(sayHi({"name": 'minu'}));
 }
