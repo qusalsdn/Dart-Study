@@ -1,38 +1,26 @@
 class Player {
-  final String name;
+  String name, team;
   int xp;
-  String team;
 
-  Player.fromJson(Map<String, dynamic> playerJson)
-      : name = playerJson['name'],
-        team = playerJson['team'],
-        xp = playerJson['xp'];
+  Player({
+    required this.name,
+    required this.xp,
+    required this.team,
+  });
 
   void playerInfo() {
-    print('Player 정보: $name $team $xp');
+    print('PlayerInfo: $name $team $xp');
   }
 }
 
 void main() {
-  var apiData = [
-    {
-      'name': 'minu',
-      'team': 'red',
-      'xp': 0,
-    },
-    {
-      'name': 'nico',
-      'team': 'red',
-      'xp': 0,
-    },
-    {
-      'name': 'dal',
-      'team': 'red',
-      'xp': 0,
-    },
-  ];
-  apiData.forEach((playerJson) {
-    var player = Player.fromJson(playerJson);
-    player.playerInfo();
-  });
+  var minu = Player(name: 'minu', xp: 50000, team: 'blue')
+    // minu.name='woo';
+    // minu.xp=100000;
+    // minu.team='red';
+    // 위에 처럼 객체를 계속 선언하는 대신 ;을 지우고 ..을 이용하여 값을 변경할 수도 있다.
+    ..name = 'woo'
+    ..xp = 100000
+    ..team = 'red'
+    ..playerInfo();
 }
