@@ -1,10 +1,17 @@
 class Player {
   final String name;
   int xp;
+  String team;
+  int age;
 
   // 아래의 Constructors 함수를 이용해 player를 생성할 때 값들을 명시해 줄 수 있다.
   // 또한 위에 name, xp의 타입을 명시해 줬기 때문에 아래처럼 this를 이용해 짧게 코드를 작성할 수 있다.
-  Player(this.name, this.xp);
+  Player({
+    required this.name,
+    required this.xp,
+    required this.team,
+    required this.age,
+  });
 
   void sayHello() {
     // class method안에서는 this를 쓰지 않는 것을 권장한다.
@@ -16,8 +23,18 @@ class Player {
 
 void main() {
   // dart에서는 java처럼 new를 꼭 붙이지 않아도 된다.
-  var player = Player('minu', 1500);
+  var player = Player(
+    name: 'minu',
+    age: 24,
+    team: 'blue',
+    xp: 1500,
+  );
   player.sayHello();
-  var player2 = Player('minu1', 2500);
+  var player2 = Player(
+    name: 'minu1',
+    age: 25,
+    team: 'blue',
+    xp: 2000,
+  );
   player2.sayHello();
 }
