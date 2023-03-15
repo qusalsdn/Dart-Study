@@ -1,17 +1,20 @@
-// TypeDef은 자료형에 사용자가 원하는 alias를 붙일 수 있게 해준다.(자료형 이름의 별명을 만들 때 사용)
-typedef UserInfo = Map<String, String>;
-typedef ListOfInts = List<int>;
+class Player {
+  String name = 'minu';
+  int xp = 1500;
 
-String sayHi(UserInfo userInfo) {
-  return '안녕 ${userInfo['name']}';
-}
-
-ListOfInts reversListOfNumbers(ListOfInts list) {
-  var reversed = list.reversed;
-  return reversed.toList();
+  void sayHello() {
+    // class method안에서는 this를 쓰지 않는 것을 권장한다.
+    // dart에서는 this를 붙일 필요가 없다. 하지만 아래처럼 메소드 내의 변수와 class 내의 변수 이름이 겹치면 this를 사용해야 한다.
+    // var name = 'newName';
+    print('안녕 내 이름은 $name이야!');
+  }
 }
 
 void main() {
-  print(reversListOfNumbers([1, 2, 3]));
-  print(sayHi({"name": 'minu'}));
+  // dart에서는 java처럼 new를 꼭 붙이지 않아도 된다.
+  var player = Player();
+  print(player.name);
+  player.name = 'minuuuuu';
+  print(player.name);
+  player.sayHello();
 }
